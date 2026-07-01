@@ -14,6 +14,8 @@ import { playSound } from "@/lib/sounds";
 const SHAKE_DURATION_MS = 1500;
 const DROP_STAGGER_MS = 180;
 
+const TONES: Array<"cream" | "amber" | "sage"> = ["cream", "amber", "sage"];
+
 /**
  * Step 3 — bowl visual with paper balls dropping in (staggered), then a
  * "Pick Random Option" button that shakes the bowl before drawing.
@@ -86,9 +88,20 @@ export function BowlStep(): React.ReactElement {
 
       <div className="relative w-full max-w-md">
         <Bowl shaking={shaking}>
-          {Array.from({ length: ballsDropped }).map((_, i) => (
-            <PaperBall key={i} delay={0} size={22 + (i % 3) * 4} seed={i} />
-          ))}
+          {bowlOptions.slice(0, ballsDropped).map((option, i) => {
+            const originalIndex = options.indexOf(option);
+            const indexForChit = originalIndex !== -1 ? originalIndex : i;
+            const tone = TONES[indexForChit % TONES.length];
+            return (
+              <PaperBall
+                key={`${option}-${i}`}
+                delay={0}
+                size={44 + (i % 3) * 6}
+                seed={indexForChit}
+                tone={tone}
+              />
+            );
+          })}
         </Bowl>
       </div>
 

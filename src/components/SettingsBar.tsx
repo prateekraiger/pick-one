@@ -1,20 +1,18 @@
 "use client";
 
 import * as React from "react";
-import { Volume2, VolumeX, Moon, Sun, Share2, Check } from "lucide-react";
+import { Volume2, VolumeX, Share2, Check } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { useDecisionStore } from "@/store/useDecisionStore";
-import { useDarkMode } from "@/hooks/useDarkMode";
 import { buildShareUrl } from "@/lib/share";
 import { cn } from "@/lib/utils";
 
 /**
- * Top utility bar: dark mode toggle, mute toggle, and (during options/bowl
+ * Top utility bar: mute toggle, and (during options/bowl
  * steps) a share-link button that encodes the current setup into the URL.
  */
 export function SettingsBar(): React.ReactElement {
-  const { isDark, toggle } = useDarkMode();
   const muted = useDecisionStore((s) => s.settings.muted);
   const toggleMuted = useDecisionStore((s) => s.toggleMuted);
   const step = useDecisionStore((s) => s.step);

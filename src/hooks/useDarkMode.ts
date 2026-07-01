@@ -2,7 +2,6 @@
 
 import * as React from "react";
 
-const STORAGE_KEY = "pick-one-dark-mode";
 
 /**
  * Manages the `dark` class on <html> and persists the user's preference,
