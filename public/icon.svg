@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Circular Badge Background -->
+  <circle cx="16" cy="16" r="14.5" fill="#fdfaf3" stroke="#e5b56a" stroke-width="1" />
+  
+  <!-- Bowl back interior -->
+  <ellipse cx="16" cy="19" rx="8" ry="1.6" fill="#8c7053" />
+  
+  <!-- Floating Chit -->
+  <path d="M 14 11 L 18 9 L 19 13 L 15 14 Z" fill="#fffdf9" stroke="#cf9e5d" stroke-width="0.5" />
+  
+  <!-- Pleated Bowl Front -->
+  <path d="M 8 18 Q 12 18.5 16 18.8 L 19 26 Q 15 26.5 11 26 Z" fill="#ebd6b9" />
+  <path d="M 16 18.8 Q 20 18.5 24 18 L 21 26 Q 17 26.5 13 26 Z" fill="#dfc09c" />
+  
+  <!-- Rolled Rim -->
+  <ellipse cx="16" cy="18" rx="8.2" ry="1.5" fill="none" stroke="#faecd8" stroke-width="1" />
+</svg>
